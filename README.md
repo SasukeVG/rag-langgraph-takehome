@@ -289,5 +289,3 @@ Planned improvements and extensions are documented in [`NEXT_STEPS.md`](./NEXT_S
 
 
 It is designed to be easy to run, easy to review, and easy to extend.
-
-
