@@ -3,30 +3,6 @@ from typing import List, Optional
 from pydantic import BaseModel, Field, field_validator
 
 
-class QueryRequest(BaseModel):
-    query: str = Field(..., description="Search query string")
-    k: int = Field(default=3, ge=1, le=20, description="Number of documents to retrieve")
-
-
-class DocumentResult(BaseModel):
-    content: str = Field(..., description="Document content")
-    source: str = Field(..., description="Source file name")
-    similarity: float = Field(..., description="L2 distance score")
-
-
-class QueryResponse(BaseModel):
-    query: str
-    results: List[DocumentResult]
-    total_found: int
-
-
-class UploadResponse(BaseModel):
-    filename: str
-    status: str
-    chunks_added: int
-    message: str
-
-
 class StatsResponse(BaseModel):
     status: str = Field(
         ..., description="Status of the vector store (ready, empty, not_initialized, error)"
